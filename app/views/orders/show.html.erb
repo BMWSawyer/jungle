@@ -9,8 +9,6 @@
     <h4>A confirmation email has been sent to: <%= @order.email %> </h4>
   </div>
 
-  <%= @order.line_items.inspect %>
-
   <div class="panel panel-default items">
     <table class="table table-bordered">
       <thead>
@@ -32,7 +30,7 @@
             TOTAL:
           </th>
           <th>
-            <%= humanized_money_with_symbol cart_subtotal_cents / 100.0 %>
+            <%= humanized_money_with_symbol @order.total_cents / 100.0 %>
           </th>
         </tr>
       </tfoot>
